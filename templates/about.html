@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/style.css">
+{% extends "base.html" %}
 
-    <title>Development HUB - About me</title>
-</head>
-<body>
-    <h1>Welcome to me</h1>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/">Home</a></h2>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/portfolio">Portfolio</a></h2>
-    <img src="/static/img/smartninja-logo.png">
-    <h3>Below is just a little bit of information about me:</h3>
-    <div><p>How you doin?</p></div>
-</body>
-</html>
+{% block content %}
+    <p>A little bit more about me</p>
+{% endblock content %}
