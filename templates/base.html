@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Base template with Jinja</title>
+        <title>{% block title %}{% endblock title %}</title>
 
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
@@ -10,11 +10,12 @@
     <body>
         <h1>Let's try out Jinja!</h1>
 
-        {% block content %}
         <p>
-            <a href="/">Home</a>,
+            <a href="/">Index</a>,
             <a href="/about">About me</a>
         </p>
+
+        {% block content %}
         {% endblock content %}
     </body>
 </html>
