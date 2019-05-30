@@ -6,4 +6,13 @@
 
 {% block content %}
     <p>A little bit more about me</p>
+    <form method="post" action="/contact">
+        <input type="text" name="contact-name" placeholder="Your name">
+        <br>
+        <input type="email" name="contact-email" placeholder="Your email">
+        <br>
+        <textarea name="message" placeholder="Your message"></textarea>
+        <br>
+        <button type="submit">Send</button>
+    </form>
 {% endblock content %}
