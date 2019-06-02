@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 @app.route ("/")
 def index():
-    some_text = "Message from the handler."
+    some_text = "A message from the handler:"
     current_year = datetime.datetime.now().year
-    cities = ["Ljubljana", "Kranj", "Koper", "Ptuj"]
+    current_city = ["Ljubljana"]
     logged_in = True
-    return render_template("index.html", some_text=some_text, current_year=current_year, cities=cities, logged_in=logged_in)
+    return render_template("index.html", some_text=some_text, current_year=current_year, current_city=current_city, logged_in=logged_in)
 
 @app.route("/about")
 def about():

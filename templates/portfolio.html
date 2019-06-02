@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/style.css">
+{% extends "base.html" %}
+{% block title %}
+    My portfolio of projects
+{% endblock title %}
 
-    <title>Development HUB - My portfolio</title>
-</head>
-<body>
+
+{% block content %}
     <h1>Welcome to my portfolio</h1>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/">Home</a></h2>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/about">About me</a></h2>
-    <img src="/static/img/smartninja-logo.png">
-    <h3>Below is the assortment of coding projects I have done so far:</h3>
+    <h3>Below is an assortment of coding projects I have done so far:</h3>
         <div>
             <table>
                 <tr>
@@ -20,5 +15,4 @@
                     <td><a href="https://sm-lesson-15-app.herokuapp.com/portfolio/og-barbershop">OG Barbershop</a></td>
             </table>
         </div>
-</body>
-</html>
+{% endblock content %}
