@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="/static/css/style.css">
-        <title>Welcome to my Index page</title>
-    </head>
+{% extends "base.html" %}
 
-    <body>
-        <h1>Hello, welcome to my development hub!</h1>
-        <table>
-            <tr>
-                <td><h2><a href="https://sm-lesson-15-app.herokuapp.com/about">About me</a></h2></td>
-                <td><h2><a href="https://sm-lesson-15-app.herokuapp.com/portfolio">Portfolio</a></h2></td>
-            </tr>
-        </table>
-        <img src="/static/img/smartninja-logo.png">
-    </body>
-</html>
+{% block title %}
+    My index page
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <p>Hello, index.html reporting for duty!</p>
+        <p>{{ some_text }}</p>
+        <p>Current year is: {{ current_year }}</p>
+
+        <ul>
+            {% for city in current_city %}
+            <li>I am located in: {{ current_city }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if logged_in %}
+        <p>User logged in successfully</p>
+        {% else %}
+        <p>User not logged in</p>
+        {% endif %}
+    </div>
+{% endblock content %}

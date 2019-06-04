@@ -1,24 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/style.css">
+{% extends "base.html" %}
+{% block title %}
+    My portfolio of projects
+{% endblock title %}
 
-    <title>Development HUB - My portfolio</title>
-</head>
-<body>
+
+{% block content %}
+<div class="container">
     <h1>Welcome to my portfolio</h1>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/">Home</a></h2>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/about">About me</a></h2>
-    <img src="/static/img/smartninja-logo.png">
-    <h3>Below is the assortment of coding projects I have done so far:</h3>
-        <div>
-            <table>
-                <tr>
-                    <td><a href="https://sm-lesson-15-app.herokuapp.com/portfolio/fakebook">Fakebook</a></td>
-                    <td><a href="https://sm-lesson-15-app.herokuapp.com/portfolio/foogle-login">Foogle login</a></td>
-                    <td><a href="https://sm-lesson-15-app.herokuapp.com/portfolio/og-barbershop">OG Barbershop</a></td>
-            </table>
+    <h3>Below is an assortment of coding projects I have done so far:</h3>
+    <div>
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Fakebook</h5>
+                    <p class="card-text">My Fakebook profile is my first ever coding experience using only html as an exercise.</p>
+                    <a class="btn btn-outline-primary" href="/portfolio/fakebook" role="button">Check it out!</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Foogle login</h5>
+                    <p class="card-text">The first project I combined using html and bootstrap css to design a fake google login page.</p>
+                    <a class="btn btn-outline-primary" href="/portfolio/foogle-login" role="button">Check it out!</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">OG Barbershop</h5>
+                    <p class="card-text">The first project combining html and bootsrap to create an intro webpage for a business.</p>
+                    <a class="btn btn-outline-primary" href="/portfolio/og-barbershop" role="button">Check it out!</a>
+                </div>
+            </div>
         </div>
-</body>
-</html>
+    </div>
+</div>
+{% endblock content %}

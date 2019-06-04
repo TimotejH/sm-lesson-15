@@ -1,17 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/style.css">
+{% extends "base.html" %}
 
-    <title>Development HUB - About me</title>
-</head>
-<body>
-    <h1>Welcome to me</h1>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/">Home</a></h2>
-    <h2><a href="https://sm-lesson-15-app.herokuapp.com/portfolio">Portfolio</a></h2>
-    <img src="/static/img/smartninja-logo.png">
-    <h3>Below is just a little bit of information about me:</h3>
-    <div><p>How you doin?</p></div>
-</body>
-</html>
+{% block title %}
+    My about me page
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <p>A little bit more about me:</p>
+        <a href="/portfolio/fakebook">My fakebook profile</a>
+        {% if name %}
+        <p>Hello, {{ name }}</p>
+        {% endif %}
+        <p>If you would like to send me a message fill out the form below:</p>
+        <form method="post" action="/about">
+            <div class="form-group">
+                <label for="InputName">Name</label>
+                <input type="text" class="form-control" name="contact-name" placeholder="Your name" id="InputName">
+            </div>
+            <div>
+                <label for="InputEmail">Email</label>
+                <input type="email" class="form-control" name="contact-email" placeholder="Your email" id="InputEmail">
+            </div>
+            <div class="form-group">
+                <label for="InputMessage">Message</label>
+                <textarea name="message" class="form-control" placeholder="Your message" id="InputMessage"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+    </div>
+{% endblock content %}
