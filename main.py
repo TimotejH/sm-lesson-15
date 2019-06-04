@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 import datetime
 app = Flask(__name__)
 
@@ -11,20 +11,23 @@ def index():
     logged_in = True
     return render_template("index.html", some_text=some_text, current_year=current_year, current_city=current_city, logged_in=logged_in)
 
-@app.route("/about")
+@app.route("/about", methods=["GET", "POST"])
 def about():
-    return render_template("about.html")
+    if request.method == "GET":
+        user_name = request.cookies.get("user_name")
+        return render_template("about.html", name=user_name)
+    elif request.method == "POST":
+        contact_name = request.form.get("contact-name")
+        contact_email = request.form.get("contact-email")
+        contact_message = request.form.get("message")
+        print(contact_name)
+        print(contact_email)
+        print(contact_message)
 
-@app.route("/contact", methods=["POST"])
-def contact():
-    contact_name = request.form.get("contact-name")
-    contact_email = request.form.get("contact-email")
-    contact_message = request.form.get("message")
-    print(contact_name)
-    print(contact_email)
-    print(contact_message)
+        response = make_response(render_template("success.html"))
+        response.set_cookie("user_name", contact_name)
 
-    return render_template("success.html")
+        return response
 
 @app.route("/portfolio")
 def portfolio():
